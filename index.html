@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLOCKVERSE 2.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="game"></div>
+
+  <div id="launcher" class="launcher">
+    <header>
+      <div class="logo">B<span>V</span></div>
+      <div>
+        <h2>BLOCKVERSE</h2>
+        <small>CREATE YOUR OWN WORLD</small>
+      </div>
+    </header>
+
+    <main>
+      <p class="tag">THE WORLD IS YOURS</p>
+      <h1>BUILD.<br>EXPLORE.<br><span>DISCOVER.</span></h1>
+
+      <p class="description">
+        An open world. Endless possibilities.
+        Your adventure starts here.
+      </p>
+
+      <label for="worldName">WORLD NAME</label>
+      <input id="worldName" value="My First World">
+
+      <label for="mode">GAME MODE</label>
+      <select id="mode">
+        <option value="creative">Creative</option>
+        <option value="survival">Survival</option>
+      </select>
+
+      <button id="play">CREATE WORLD →</button>
+      <button id="load" class="secondary">LOAD SAVED WORLD</button>
+
+      <div class="launcher-footer">
+        BLOCKVERSE 2.0 · WEB EDITION
+      </div>
+    </main>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div class="hud-top">
+      <div class="world-name" id="worldLabel">MY WORLD</div>
+      <div id="coordinates">X: 0 Y: 0 Z: 0</div>
+    </div>
+
+    <div class="crosshair">+</div>
+
+    <div id="status"></div>
+
+    <div id="hotbar"></div>
+
+    <div class="controls">
+      WASD: MOVE · SPACE: JUMP · F5: CAMERA · ESC: PAUSE
+    </div>
+  </div>
+
+  <div id="pause" class="overlay hidden">
+    <div class="pause-card">
+      <h1>PAUSED</h1>
+      <button id="resume">RESUME</button>
+      <button id="save">SAVE WORLD</button>
+      <button id="exit" class="secondary">MAIN MENU</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
